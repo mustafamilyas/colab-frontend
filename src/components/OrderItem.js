@@ -6,7 +6,7 @@ class OrderItem extends Component {
         return (
             <div className='order-item'>
                 <div className='order-item__img-wrapper'>
-                    <img src={img} alt={`picture of ${name}`}/>
+                    <img src={img} alt={name}/>
                 </div>
                 <div className='order-item__content'>
                     <div className='order-item__content--left'>
