@@ -1,0 +1,29 @@
+import React, { Component } from 'react';
+
+class OrderItem extends Component {
+    render() { 
+        let {img, name, count, id, price} = this.props;
+        return (
+            <div className='order-item'>
+                <div className='order-item__img-wrapper'>
+                    <img src={img} alt={`picture of ${name}`}/>
+                </div>
+                <div className='order-item__content'>
+                    <div className='order-item__content--left'>
+                        <div className='order-item__name'>
+                            {name}
+                        </div>
+                        <div className='order-item__count'>
+                            {count}
+                        </div>
+                    </div>
+                    <div className='order-item__content--right'>
+                        { count * price }
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+ 
+export default OrderItem;
