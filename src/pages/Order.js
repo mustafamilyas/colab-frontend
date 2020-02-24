@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OrderSummary from '../components/OrderSummary';
-import OrderList from '../components/OrderList';
+import ProductList from '../components/ProductList';
 
 class Order extends Component {
     render() { 
@@ -16,10 +16,10 @@ class Order extends Component {
                         <div className='order-suggestion__item'>Food</div>
                         <div className='order-suggestion__item'>Dessert</div>
                     </div>
-                    <OrderList
+                    <ProductList
                         title="Our Best Selling Product"
                     />
-                    <OrderList
+                    <ProductList
                         title="Our Recommendation"
                     />
                 </div>
