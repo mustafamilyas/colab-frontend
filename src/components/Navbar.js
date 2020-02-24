@@ -17,8 +17,8 @@ class Navbar extends Component {
         return (
             <nav>
                 <ul>
-                    { this.state.routes.map(route => (
-                        <li><Link to={route.to}>{route.name}</Link></li>
+                    { this.state.routes.map((route, id) => (
+                        <li key={id}><Link to={route.to}>{route.name}</Link></li>
                     ))}
                 </ul>
             </nav>
