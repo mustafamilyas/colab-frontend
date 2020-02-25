@@ -16,6 +16,7 @@ class ProductItem extends Component {
                 <div className='product-item__counter'>
                     <input className='product-item__counter-input' type='number' min='0' value={count}/>
                 </div>
+                &nbsp;
             </div>
         );
     }

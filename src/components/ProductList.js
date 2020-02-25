@@ -9,6 +9,7 @@ class ProductList extends Component {
             {id: 3, name: 'Pizza', price: 20000, count: 0, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
             {id: 4, name: 'Pizza', price: 20000, count: 1, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
             {id: 5, name: 'Pizza', price: 20000, count: 2, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
+            // {id: 6, name: 'Pizza', price: 20000, count: 2, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
         ]
     }
     render() { 
