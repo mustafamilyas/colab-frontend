@@ -9,7 +9,7 @@ class Order extends Component {
                 <div className='order-content'>
                     <header className='order-header'>
                         <h1 className='order__heading'>Welcome to Colab</h1>
-                        <input type='text' className='order__input--search'/>
+                        <input type='text' className='order__input--search' placeholder='Search your favorite food'/>
                     </header>
                     <div className='order-suggestion'>
                         <div className='order-suggestion__item'>Drink</div>
