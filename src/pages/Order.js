@@ -7,7 +7,7 @@ import OrderSuccess from '../components/Modal/OrderSuccess';
 
 class Order extends Component {
     state = {
-        phase: 0
+        phase: 1
     }
     render() { 
         const modal = [

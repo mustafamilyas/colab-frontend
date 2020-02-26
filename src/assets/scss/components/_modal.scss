@@ -14,6 +14,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         width: 50rem;
+        max-height: 50vh;
         background-color: white;
         border-radius: 1rem;
         padding: $gutter-bg $gutter-md;
@@ -40,6 +41,8 @@
                     border: none;
                     border-bottom: 1px solid rgba(black, .5);
                     font-size: 2rem;
+                    text-align: center;
+                    padding: $gutter-xsm;
                 }
             }
 
@@ -52,6 +55,56 @@
                 font-weight: bold;
                 padding: $gutter-sm;
                 border-radius: .5rem;
+            }
+        }
+
+        &-confirm {
+            @include flex-center;
+            flex-direction: column;
+            width: 80%;
+
+            &__title {
+                font-weight: bold;
+                font-size: 2.5rem;
+                margin-bottom: $gutter-md;
+            }
+
+            &__consument {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            div:not(:first-child):not(:last-child){
+                margin-bottom: $gutter-sm;
+            }
+
+            &__btn {
+                &-group {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                padding: $gutter-sm;
+                font-size: 2rem;
+                font-weight: bold;
+                border:none;
+                border-radius: .5rem;   
+                
+                &--invert {
+                    background-color: $color-white;
+                    border: 1px solid $color-secondary-dark;
+                    color: $color-secondary-dark;
+                    flex-basis: 25%;
+                }
+
+                &--primary {
+                    background-color: $color-secondary-dark;
+                    color: $color-white;
+                    flex-basis: 70%;
+                }
             }
         }
     }
