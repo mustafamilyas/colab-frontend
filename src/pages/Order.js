@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import OrderSummary from '../components/OrderSummary';
 import ProductList from '../components/ProductList';
+import OrderIntro from '../components/Modal/OrderIntro';
+import OrderConfirm from '../components/Modal/OrderConfirm';
+import OrderSuccess from '../components/Modal/OrderSuccess';
 
 class Order extends Component {
+    state = {
+        phase: 0
+    }
     render() { 
+        const modal = [
+            <OrderIntro/>,
+            <OrderConfirm/>,
+            <OrderSuccess/>
+        ]
+
         return (
             <div className='order'>
                 <div className='order-content'>
@@ -24,6 +36,7 @@ class Order extends Component {
                     />
                 </div>
                 <OrderSummary />
+                { modal[this.state.phase] }
             </div>
         );
     }

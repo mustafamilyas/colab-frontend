@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class OrderItem extends Component {
     render() { 
-        let {img, name, count, id, price} = this.props;
+        let {img, name, count, price} = this.props;
         return (
             <div className='order-item'>
                 <div className='order-item__img-wrapper'>

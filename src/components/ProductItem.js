@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ProductItem extends Component {
     render() { 
-        const {id, name, price, count, img} = this.props;
+        const {name, price, count, img} = this.props;
 
         return (
             <div className='product-item'>
