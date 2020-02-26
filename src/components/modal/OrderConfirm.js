@@ -5,7 +5,7 @@ class OrderConfirm extends Component {
     render() { 
         return (
             <Modal>
-                <div className='order-confirm'>
+                <div className='popup-order order-confirm'>
                     <div className='order-confirm__title'>
                         Order Summary
                     </div>

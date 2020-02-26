@@ -5,7 +5,7 @@ class OrderIntro extends Component {
     render() { 
         return (
             <Modal>
-                <div className='order-intro'>
+                <div className='popup-order order-intro'>
                     <label className='order-intro__input'>
                         Your Name
                         <input type='text'/>
