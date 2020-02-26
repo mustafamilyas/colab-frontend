@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { addArticle } from "../actions/article";
+import { toggleModal } from "../actions/article";
 import OrderItem from './OrderItem';
 
 class OrderSummary extends Component {
@@ -15,6 +15,11 @@ class OrderSummary extends Component {
             {id: 7, name: 'Pizza', price: 20000, count: 3, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
             {id: 8, name: 'Pizza', price: 20000, count: 3, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
         ]
+    }
+
+    handleOrder = () => {
+        // this.props.addArticle({title: 'ganteng'})
+        this.props.toggleModal({modalState: 1, isModalShow: true})
     }
     render() { 
         return (
@@ -60,7 +65,7 @@ class OrderSummary extends Component {
                             Rp. 222.727,00
                         </div>
                     </div>
-                    <div className='order-summary__btn'>
+                    <div className='order-summary__btn' onClick={this.handleOrder}>
                         Order
                     </div>
                 </div>
@@ -75,7 +80,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      addArticle: article => dispatch(addArticle(article))
+      toggleModal: modalState => dispatch(toggleModal(modalState)),
     };
 }
  

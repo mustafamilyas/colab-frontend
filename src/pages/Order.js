@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { toggleModal } from "../actions/article";
 import OrderSummary from '../components/OrderSummary';
 import ProductList from '../components/ProductList';
 import OrderIntro from '../components/Modal/OrderIntro';
@@ -6,10 +8,8 @@ import OrderConfirm from '../components/Modal/OrderConfirm';
 import OrderSuccess from '../components/Modal/OrderSuccess';
 
 class Order extends Component {
-    state = {
-        phase: 2
-    }
-    render() { 
+    render() {
+        let { modalState } = this.props; 
         const modal = [
             <OrderIntro/>,
             <OrderConfirm/>,
@@ -34,12 +34,25 @@ class Order extends Component {
                     <ProductList
                         title="Our Recommendation"
                     />
+                    <ProductList
+                        title="Friday Payday"
+                    />
                 </div>
                 <OrderSummary />
-                { modal[this.state.phase] }
+                { modal[modalState] }
             </div>
         );
     }
 }
+
+const mapStateToProps = state => {
+    return { ...state };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      toggleModal: modalState => dispatch(toggleModal(modalState)),
+    };
+}
  
-export default Order;
+export default connect(mapStateToProps, mapDispatchToProps)(Order);

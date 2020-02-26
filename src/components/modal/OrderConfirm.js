@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { toggleModal } from "../../actions/article";
 import Modal from '.';
 
 class OrderConfirm extends Component {
+    handleSubmit = () =>{
+        this.props.toggleModal({modalState: 2, isModalShow: true});
+    }
+
     render() { 
         return (
             <Modal>
@@ -26,7 +32,7 @@ class OrderConfirm extends Component {
                         <button className='order-confirm__btn order-confirm__btn--invert'>
                             Cancel
                         </button>
-                        <button className='order-confirm__btn order-confirm__btn--primary'>
+                        <button className='order-confirm__btn order-confirm__btn--primary' onClick={this.handleSubmit}>
                             Submit My Order
                         </button>
                     </div>
@@ -35,5 +41,15 @@ class OrderConfirm extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return { ...state };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      toggleModal: modalState => dispatch(toggleModal(modalState)),
+    };
+}
  
-export default OrderConfirm;
+export default connect(mapStateToProps, mapDispatchToProps)(OrderConfirm);

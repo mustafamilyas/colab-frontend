@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { toggleModal } from "../../actions/article";
 import Modal from '.';
 
 class OrderIntro extends Component {
+    handleSubmit = () => {
+        this.props.toggleModal({modalState: 0, isModalShow: false})
+    }
+
     render() { 
         return (
             <Modal>
@@ -14,7 +20,7 @@ class OrderIntro extends Component {
                         Table Number
                         <input type='text'/>
                     </label>
-                    <button className='order-intro__btn'>
+                    <button className='order-intro__btn' onClick={this.handleSubmit}>
                         Submit
                     </button>
                 </div>
@@ -22,5 +28,15 @@ class OrderIntro extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return { ...state };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      toggleModal: modalState => dispatch(toggleModal(modalState)),
+    };
+}
  
-export default OrderIntro;
+export default connect(mapStateToProps, mapDispatchToProps)(OrderIntro);
