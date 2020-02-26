@@ -14,11 +14,11 @@ class OrderIntro extends Component {
                 <div className='popup-order order-intro'>
                     <label className='order-intro__input'>
                         Your Name
-                        <input type='text'/>
+                        <input type='text' placeholder='John Doe'/>
                     </label>
                     <label className='order-intro__input'>
                         Table Number
-                        <input type='text'/>
+                        <input type='text' placeholder='C20'/>
                     </label>
                     <button className='order-intro__btn' onClick={this.handleSubmit}>
                         Submit

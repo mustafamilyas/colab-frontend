@@ -4,12 +4,12 @@ import ProductItem from './ProductItem';
 class ProductList extends Component {
     state = {
         items: [
-            {id: 1, name: 'Pizza', price: 20000, count: 0, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
-            {id: 2, name: 'Pizza', price: 20000, count: 0, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
-            {id: 3, name: 'Pizza', price: 20000, count: 0, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
-            {id: 4, name: 'Pizza', price: 20000, count: 1, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
-            {id: 5, name: 'Pizza', price: 20000, count: 2, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
-            // {id: 6, name: 'Pizza', price: 20000, count: 2, img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=625&q=80'},
+            {id: 1, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+            {id: 2, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+            {id: 3, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+            {id: 4, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
+            {id: 5, name: 'Donut', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
+            // {id: 6, name: 'Pizza', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
         ]
     }
     render() { 
