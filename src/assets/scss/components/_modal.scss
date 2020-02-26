@@ -13,9 +13,46 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        min-width: 70rem;
+        width: 50rem;
         background-color: white;
         border-radius: 1rem;
-        padding: $gutter-sm;
+        padding: $gutter-bg $gutter-md;
+        @include flex-center;
+    }
+
+    .order {
+        &-intro {
+            @include flex-center;
+            flex-direction: column;
+            width: 80%;
+
+            &__input {
+                @include flex-center;
+                flex-direction: column;
+                width: 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                margin-bottom: $gutter-bg;
+
+                input {
+                    margin-top: $gutter-sm;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid rgba(black, .5);
+                    font-size: 2rem;
+                }
+            }
+
+            &__btn {
+                border: none;
+                width: 80%;
+                background-color: $color-secondary-dark;
+                color: $color-white;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: $gutter-sm;
+                border-radius: .5rem;
+            }
+        }
     }
 }
