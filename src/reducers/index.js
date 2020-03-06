@@ -1,26 +1,18 @@
-import {ADD_ARTICLE, TOGGLE_MODAL} from '../actions';
+import {TOGGLE_MODAL, ADD_ORDER} from '../actions';
 
 const initialState = {
-    articles: [
-        {
-            title: "test"
-        },
-        {
-            title: "test1"
-        },
-        {
-            title: "test2"
-        }
-    ],
+    name: '',
+    table: '',
+    orders: [],
     modalState: 0,
     isModalShow: true
 };
   
 function rootReducer(state = initialState, action) {
     switch(action.type){
-        case ADD_ARTICLE:
+        case ADD_ORDER:
             return Object.assign({}, state, {
-                articles: state.articles.concat(action.payload)
+                orders: state.orders.concat(action.payload)
             });
         case TOGGLE_MODAL:
             return Object.assign({}, state, {

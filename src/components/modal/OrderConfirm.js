@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { toggleModal } from "../../actions/article";
+import { toggleModal } from "../../actions/order";
 import Modal from '.';
 
 class OrderConfirm extends Component {
     handleSubmit = () =>{
         this.props.toggleModal({modalState: 2, isModalShow: true});
+
     }
 
     render() { 
@@ -48,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      toggleModal: modalState => dispatch(toggleModal(modalState)),
+      toggleModal: modalState => dispatch(toggleModal(modalState))
     };
 }
  

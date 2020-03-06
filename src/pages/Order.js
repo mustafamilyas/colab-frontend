@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { toggleModal } from "../actions/article";
+import { toggleModal } from "../actions/order";
 import OrderSummary from '../components/OrderSummary';
 import ProductList from '../components/ProductList';
 import OrderIntro from '../components/Modal/OrderIntro';

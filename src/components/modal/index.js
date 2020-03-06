@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { toggleModal } from "../../actions/article";
+import { toggleModal } from "../../actions/order";
 
 class Modal extends Component {
     handleClose = () => {
