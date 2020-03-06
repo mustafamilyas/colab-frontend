@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { toggleModal } from "../../actions/order";
 import Modal from '.';
 import SummaryItem from '../SummaryItem';
+import { toggleModal, submitOrder, emptyOrder } from "../../actions/order";
 
 class OrderConfirm extends Component {
     handleSubmit = () =>{
+        let payload = {
+            name: this.props.name,
+            table: this.props.table,
+            orders: this.props.orders
+        }
+        submitOrder(payload);
         this.props.toggleModal({modalState: 2, isModalShow: true});
+        this.props.emptyOrder();
     }
 
-    handleSubmit = () =>{
+    handleClose = () =>{
         this.props.toggleModal({modalState: 1, isModalShow: false});
     }
 
@@ -62,7 +69,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      toggleModal: modalState => dispatch(toggleModal(modalState))
+      toggleModal: modalState => dispatch(toggleModal(modalState)),
+      emptyOrder: modalState => dispatch(emptyOrder(modalState))
     };
 }
  

@@ -1,4 +1,4 @@
-import {TOGGLE_MODAL, ADD_ORDER, CHANGE_NAME, CHANGE_TBL_NUM} from '../actions';
+import {TOGGLE_MODAL, ADD_ORDER, CHANGE_NAME, CHANGE_TBL_NUM, EMPTY_ORDER} from '../actions';
 import service from '../utils/request';
 
 export const toggleModal = (payload) => {
@@ -26,3 +26,7 @@ export const submitOrder = async function(payload) {
         console.log(e)
     })
 }
+
+export const emptyOrder = () => {
+    return { type: EMPTY_ORDER }
+};

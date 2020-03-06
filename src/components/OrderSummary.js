@@ -77,7 +77,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      toggleModal: modalState => dispatch(toggleModal(modalState)),
+      toggleModal: modalState => dispatch(toggleModal(modalState))
     };
 }
  
