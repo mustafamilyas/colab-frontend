@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { toggleModal } from "../actions/order";
+import { formatMoney } from "../utils/format";
 import OrderItem from './OrderItem';
 
 class OrderSummary extends Component {
-    state = {
-        items: [
-            {id: 1, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-            {id: 2, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-            {id: 3, name: 'Donut', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
-            {id: 4, name: 'Donut', price: 20000, count: 3, img: require('../assets/img/donut_springkle.png')},
-            {id: 5, name: 'Donut', price: 20000, count: 3, img: require('../assets/img/donut_springkle.png')},
-            {id: 6, name: 'Donut', price: 20000, count: 3, img: require('../assets/img/donut_springkle.png')},
-            {id: 7, name: 'Donut', price: 20000, count: 3, img: require('../assets/img/donut_springkle.png')},
-            {id: 8, name: 'Donut', price: 20000, count: 3, img: require('../assets/img/donut_springkle.png')},
-        ]
-    }
 
+    calculateSubTotal = () => {
+        let subtotal = 0;
+        this.props.orders.map(order => {
+            subtotal += order.price * order.count
+        })
+        return subtotal;
+    }
     handleOrder = () => {
         // this.props.addArticle({title: 'ganteng'})
         this.props.toggleModal({modalState: 1, isModalShow: true})
     }
+
     render() { 
         return (
             <div className='order-summary'>
@@ -29,7 +26,7 @@ class OrderSummary extends Component {
                     <p>{new Date().toDateString()}</p>
                 </div>
                 <div className='order-summary__items'>
-                    {this.state.items.map(item => (
+                    {this.props.orders.length > 0 ? this.props.orders.map(item => (
                         <OrderItem 
                             key={item.id}
                             id={item.id}
@@ -38,7 +35,7 @@ class OrderSummary extends Component {
                             count={item.count}
                             price={item.price}
                         />
-                    ))}
+                    )) : 'You have no order'}
                 </div>
                 <div className='order-summary__content'>
                     <div className='row-space-between'>
@@ -46,7 +43,7 @@ class OrderSummary extends Component {
                             Subtotal
                         </div>
                         <div>
-                            Rp. 222.727,00
+                            {formatMoney(this.calculateSubTotal())}
                         </div>
                     </div>
                     <div className='row-space-between'>
@@ -54,7 +51,7 @@ class OrderSummary extends Component {
                             Tax
                         </div>
                         <div>
-                            Rp. 22.273,00
+                            {formatMoney(this.calculateSubTotal() / 10)}
                         </div>
                     </div>
                     <div className='order-summary__total row-space-between bold'>
@@ -62,7 +59,7 @@ class OrderSummary extends Component {
                             Total
                         </div>
                         <div>
-                            Rp. 222.727,00
+                            {formatMoney(this.calculateSubTotal() + this.calculateSubTotal() / 10)}
                         </div>
                     </div>
                     <div className='order-summary__btn' onClick={this.handleOrder}>

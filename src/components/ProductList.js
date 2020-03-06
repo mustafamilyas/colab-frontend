@@ -9,11 +9,11 @@ class ProductList extends Component {
 
         this.state = {
             items: [
-                {id: 1, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-                {id: 2, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-                {id: 3, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+                {id: 1, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
+                {id: 2, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
+                {id: 3, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
                 {id: 4, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-                {id: 5, name: 'Donut', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
+                {id: 5, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
                 // {id: 6, name: 'Pizza', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
             ]
         }

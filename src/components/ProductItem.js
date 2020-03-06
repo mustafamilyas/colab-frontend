@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class ProductItem extends Component {
+    handleInput = (e) => {
+        console.log(e.target.value)
+    }
+
     render() { 
         const {name, price, count, img} = this.props;
 
@@ -14,7 +18,7 @@ class ProductItem extends Component {
                     <div className='product-item__price'>{price}</div>
                 </div>
                 <div className='product-item__counter'>
-                    <input className='product-item__counter-input' type='number' min='0' value={count}/>
+                    <input className='product-item__counter-input' type='number' min='0' value={count} onChange={this.handleInput}/>
                 </div>
                 &nbsp;
             </div>
