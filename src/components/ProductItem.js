@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatMoney } from "../utils/format";
 
 class ProductItem extends Component {
     handleInput = (e) => {
@@ -15,7 +16,7 @@ class ProductItem extends Component {
                 </div>
                 <div className='product-item__desc'>
                     <div className='product-item__name'>{name}</div>
-                    <div className='product-item__price'>{price}</div>
+                    <div className='product-item__price'>{formatMoney(price)}</div>
                 </div>
                 <div className='product-item__counter'>
                     <input className='product-item__counter-input' type='number' min='0' value={count} onChange={this.handleInput}/>

@@ -9,11 +9,11 @@ class ProductList extends Component {
 
         this.state = {
             items: [
-                {id: 1, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-                {id: 2, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-                {id: 3, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-                {id: 4, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-                {id: 5, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
+                {id: 1, name: 'Banana Donut', price: 7000, count: 1, img: require('../assets/img/donut_springkle.png')},
+                {id: 2, name: 'Sandwich', price: 14000, count: 1, img: require('../assets/img/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg')},
+                {id: 3, name: 'Mie Goreng', price: 16000, count: 1, img: require('../assets/img/mae-mu-en4qp-aK1h4-unsplash.jpg')},
+                {id: 4, name: 'Ga Tau Apa', price: 22000, count: 1, img: require('../assets/img/calum-lewis-8Nc_oQsc2qQ-unsplash.jpg')},
+                {id: 5, name: 'Mie Vegan', price: 25000, count: 1, img: require('../assets/img/brooke-lark-oaz0raysASk-unsplash.jpg')},
                 // {id: 6, name: 'Pizza', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
             ]
         }

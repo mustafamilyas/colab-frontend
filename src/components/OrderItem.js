@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatMoney } from "../utils/format";
 
 class OrderItem extends Component {
     render() { 
@@ -18,7 +19,7 @@ class OrderItem extends Component {
                         </div>
                     </div>
                     <div className='order-item__content--right'>
-                        { count * price }
+                        { formatMoney(count * price) }
                     </div>
                 </div>
             </div>
