@@ -5,7 +5,7 @@ class ProductItem extends Component {
         const {name, price, count, img} = this.props;
 
         return (
-            <div className='product-item'>
+            <div className='product-item' onClick={this.props.onClick}>
                 <div className='product-item__img-wrapper'>
                     <img className='product-item__img' src={img} alt={"Picture of " + name}/>
                 </div>

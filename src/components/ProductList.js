@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import ProductItem from './ProductItem';
+import { addOrder } from "../actions/order";
 
 class ProductList extends Component {
-    state = {
-        items: [
-            {id: 1, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-            {id: 2, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-            {id: 3, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
-            {id: 4, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
-            {id: 5, name: 'Donut', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
-            // {id: 6, name: 'Pizza', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
-        ]
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            items: [
+                {id: 1, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+                {id: 2, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+                {id: 3, name: 'Donut', price: 20000, count: 0, img: require('../assets/img/donut_springkle.png')},
+                {id: 4, name: 'Donut', price: 20000, count: 1, img: require('../assets/img/donut_springkle.png')},
+                {id: 5, name: 'Donut', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
+                // {id: 6, name: 'Pizza', price: 20000, count: 2, img: require('../assets/img/donut_springkle.png')},
+            ]
+        }
+
+        this.handleClick = this.handleClick.bind(this);
     }
+    handleClick = (item) => {
+        console.log('test')
+        this.props.addOrder(item)
+    }
+
     render() { 
         return (
             <div className='product-list'>
@@ -20,14 +33,15 @@ class ProductList extends Component {
                     <div className='product-list__subheading'>see more</div>
                 </div>
                 <div className='product-list__content'>
-                    {this.state.items.map((item, id) =>(
+                    {this.state.items.map((item) =>(
                         <ProductItem 
                             id={item.id}
                             name={item.name}
                             price={item.price}
                             count={item.count}
                             img={item.img}
-                            key={id}
+                            key={item.id}
+                            onClick={()=>{this.handleClick(item)}}
                         />
                     ))}
                 </div>
@@ -35,5 +49,15 @@ class ProductList extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return { ...state };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      addOrder: payload => dispatch(addOrder(payload)),
+    };
+}
  
-export default ProductList;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

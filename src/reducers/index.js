@@ -11,9 +11,19 @@ const initialState = {
 function rootReducer(state = initialState, action) {
     switch(action.type){
         case ADD_ORDER:
-            return Object.assign({}, state, {
-                orders: state.orders.concat(action.payload)
-            });
+            let idx = state.orders.findIndex(item => item.id === action.payload.id);
+
+            if(idx === -1) {
+                return Object.assign({}, state, {
+                    orders: state.orders.concat(action.payload)
+                });
+            } else {
+                return Object.assign({}, state, {
+                    orders: state.orders.map(
+                        (order, i) => (i === idx ? 
+                            {...order, count: order.count+action.payload.count} : order))
+                });
+            }
         case TOGGLE_MODAL:
             return Object.assign({}, state, {
                 isModalShow: action.payload.isModalShow,

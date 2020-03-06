@@ -6,7 +6,7 @@ import './assets/scss/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-require('dotenv').config()
+// require('dotenv').config()
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
