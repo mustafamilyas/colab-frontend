@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { toggleModal } from "../../actions/order";
 import Modal from '.';
+import SummaryItem from '../SummaryItem';
 
 class OrderConfirm extends Component {
     handleSubmit = () =>{
         this.props.toggleModal({modalState: 2, isModalShow: true});
+    }
 
+    handleSubmit = () =>{
+        this.props.toggleModal({modalState: 1, isModalShow: false});
     }
 
     render() { 
@@ -19,18 +23,27 @@ class OrderConfirm extends Component {
                     <div className='order-confirm__consument'>
                         <div>
                             <div className='bold'>Your Name</div>
-                            <div>Ilyas</div>
+                            <div>{this.props.name}</div>
                         </div>
                         <div>
                             <div className='bold'>Table Number</div>
-                            <div>C12</div>
+                            <div>{this.props.table}</div>
                         </div>
                     </div>
                     <div className='order-confirm__summary'>
-                        &nbsp;
+                        {this.props.orders.length > 0 ? this.props.orders.map(item => (
+                            <SummaryItem 
+                                key={item.id}
+                                id={item.id}
+                                img={item.img}
+                                name={item.name}
+                                count={item.count}
+                                price={item.price}
+                            />
+                        )) : 'You have no order'}
                     </div>
                     <div className='order-confirm__btn-group'>
-                        <button className='order-confirm__btn order-confirm__btn--invert'>
+                        <button className='order-confirm__btn order-confirm__btn--invert' onClick={this.handleClose}>
                             Cancel
                         </button>
                         <button className='order-confirm__btn order-confirm__btn--primary' onClick={this.handleSubmit}>
