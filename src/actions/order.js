@@ -18,7 +18,7 @@ export const changeTableNumber = (payload) => {
 };
 
 export const submitOrder = async function(payload) {
-    await service.post('/order', payload)
+    await service.post('/queue', payload)
     .then(response => {
         console.log(response)
     })
