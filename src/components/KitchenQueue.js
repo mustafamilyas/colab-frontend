@@ -16,11 +16,11 @@ class KitchenQueue extends Component {
                 </div>
         
                 <div className="kitchen-queue__action">
-                    <div className="kitchen-queue__action-btn">
-                        Delete
+                    <div className="kitchen-queue__action-btn kitchen-queue__action-btn--danger">
+                        Del
                     </div>
-                    <div className="kitchen-queue__action-btn">
-                        Finish
+                    <div className="kitchen-queue__action-btn kitchen-queue__action-btn--primary">
+                        Process
                     </div>
                 </div>
             </div>

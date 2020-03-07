@@ -11,12 +11,17 @@ class Kitchen extends Component {
                     <h2>Process Queue</h2>
                     <div className="kitchen__list kitchen__list--process">
                         <KitchenTodo />
+                        <KitchenTodo />
+                        <KitchenTodo />
+                        <KitchenTodo />
                     </div>
                 </div>
 
                 <div className="kitchen__queue">
                     <h2>Order Queue</h2>
                     <div className="kitchen__list kitchen__list--order">
+                        <KitchenQueue />
+                        <KitchenQueue />
                         <KitchenQueue />
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 .kitchen {
     &-todo {
         width: 20%;
-        height: 53vh;
+        height: 100%;
         border: 1px solid #487C5B;
         border-radius: .5rem;
         display: flex;
@@ -10,6 +10,10 @@
         flex-direction: column;
         overflow: hidden;
         color: #487C5B;
+
+        &:not(:last-child) {
+            margin-right: 2vw;
+        }
 
         &__number {
             text-align: center;
@@ -84,12 +88,76 @@
 
                 &--primary {
                     width: 70%;
-                    font-size: bold;
+                    font-weight: bold;
                     background: #E95F83;
                     color: white;
                 }
 
                 &--delete {
+                    border: 1px solid #E95F83;
+                    color: #E95F83;
+                }
+            }
+        }
+    }
+
+    &-queue {
+        width: 12.5%;
+        height: 100%;
+        border: 1px solid rgba(#487C5B, .3);
+        border-radius: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: #487C5B;
+        background-color: white;
+
+        &:not(:last-child) {
+            margin-right: 1vw;
+        }
+
+        &__number {
+            background-color: #487C5B;
+            color: #FDE2CD;
+            font-size: 2rem;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        &__content {
+            font-size: 2.5rem;
+            
+            div:first-child {
+                margin-bottom: .5rem;
+            }
+        }
+
+        &__action {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+
+            &-btn {
+                font-size: 2rem;
+                padding: 1rem;
+                background: none;
+                border: none;
+                border-radius: .5rem;
+                text-align: center;
+                
+                &--primary {
+                    width: 70%;
+                    font-weight: bold;
+                    background: #E95F83;
+                    color: white;
+                }
+
+                &--danger {
                     border: 1px solid #E95F83;
                     color: #E95F83;
                 }
