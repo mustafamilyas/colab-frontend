@@ -16,7 +16,7 @@ class KitchenTodo extends Component {
                     </div>
                 </div>
                 <div className="kitchen-todo__items">
-                    <div className="kichen-todo__item kichen-todo__item--active">
+                    <div className="kitchen-todo__item kitchen-todo__item--done">
                         <div className="kitchen-todo__item-name">
                             Salad Dalas
                         </div>
@@ -29,7 +29,137 @@ class KitchenTodo extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="kichen-todo__item">
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
+                        <div className="kitchen-todo__item-name">
+                            Salad Dalas
+                        </div>
+                        <div className="kitchen-todo__item-attr">
+                            <div className="kitchen-todo__item-attr--num">
+                                x1
+                            </div>
+                            <div className="kitchen-todo__items-attr--status">
+                                v
+                            </div>
+                        </div>
+                    </div>
+                    <div className="kitchen-todo__item">
                         <div className="kitchen-todo__item-name">
                             Salad Dalas
                         </div>
@@ -44,12 +174,12 @@ class KitchenTodo extends Component {
                     </div>
                 </div>
                 <div className="kitchen-todo__action">
-                    <div className="kitchen-todo__action-btn">
+                    <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete">
                         Delete
-                    </div>
-                    <div className="kitchen-todo__action-btn">
+                    </button>
+                    <button className="kitchen-todo__action-btn kitchen-todo__action-btn--primary">
                         Finish
-                    </div>
+                    </button>
                 </div>
             </div>
         );
