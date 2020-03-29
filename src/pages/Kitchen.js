@@ -17,7 +17,7 @@ const Kitchen = () => {
             <div className="kitchen__queue">
                 <h2>Order Queue</h2>
                 <div className="kitchen__list kitchen__list--order">
-                    {todo.map(e=><KitchenQueue queue={e}/>)}
+                    {queue.map(e=><KitchenQueue queue={e}/>)}
                 </div>
             </div>
         </div>

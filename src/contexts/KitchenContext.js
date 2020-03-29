@@ -81,8 +81,13 @@ const KitchenContextProvider = (props) => {
     setQueue([...queue.filter(e=>e.id !== id)])  
   }
   const addTodo = (id) => {
-    setTodo([...todo, queue.find(e=>e.id === id)])
-    deleteQueue(id)
+    console.log(id, queue);
+    let newTodo = queue.find(e=>e.id === id);
+    if(newTodo){
+      newTodo.orders.map(e=>({...e,isDone: false}))
+      setTodo([...todo, newTodo])
+      deleteQueue(id)
+    }
   }
   const passedObj = {
     todo,

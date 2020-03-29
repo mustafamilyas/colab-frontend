@@ -1,11 +1,12 @@
-import React from 'react';
-import { formatMoney } from "../utils/format";
+import React, {useContext} from 'react';
+import { KitchenContext } from '../contexts/KitchenContext';
 
 const KitchenTodo = (props) => {
+    const {deleteTodo} = useContext(KitchenContext)
     const {id, name, table, orders} = props.todo;
     return (
         <div className='kitchen-todo'>
-            <div className="kitchen-todo__number">#21321</div>
+            <div className="kitchen-todo__number">#{id}</div>
             <div className="kitchen-todo__header">
                 <div>{name}</div>
                 <div>{table}</div>
@@ -28,7 +29,7 @@ const KitchenTodo = (props) => {
                 ))}
             </div>
             <div className="kitchen-todo__action">
-                <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete">
+                <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete" onClick={()=>deleteTodo(id)}>
                     Delete
                 </button>
                 <button className="kitchen-todo__action-btn kitchen-todo__action-btn--primary">
