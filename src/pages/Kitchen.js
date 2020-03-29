@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import KitchenQueue from '../components/KitchenQueue';
 import KitchenTodo from '../components/KitchenTodo';
+import { KitchenContext } from '../contexts/KitchenContext';
 
-class Kitchen extends Component {
-    
-    render() { 
-        return (
-            <div className="kitchen">
-                <div className="kitchen__todo">
-                    <h2>Process Queue</h2>
-                    <div className="kitchen__list kitchen__list--process">
-                        <KitchenTodo />
-                        <KitchenTodo />
-                        <KitchenTodo />
-                        <KitchenTodo />
-                    </div>
-                </div>
-
-                <div className="kitchen__queue">
-                    <h2>Order Queue</h2>
-                    <div className="kitchen__list kitchen__list--order">
-                        <KitchenQueue />
-                        <KitchenQueue />
-                        <KitchenQueue />
-                    </div>
+const Kitchen = () => {
+    const {queue, todo} = useContext(KitchenContext);
+    return (
+        <div className="kitchen">
+            <div className="kitchen__todo">
+                <h2>Process Queue ({todo.length}/{todo.length+queue.length})</h2>
+                <div className="kitchen__list kitchen__list--process">
+                    {todo.map(e=><KitchenTodo todo={e}/>)}
                 </div>
             </div>
-        );
-    }
+
+            <div className="kitchen__queue">
+                <h2>Order Queue</h2>
+                <div className="kitchen__list kitchen__list--order">
+                    {todo.map(e=><KitchenQueue queue={e}/>)}
+                </div>
+            </div>
+        </div>
+    );
 }
  
 export default Kitchen;

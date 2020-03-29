@@ -9,10 +9,10 @@ const KitchenContextProvider = (props) => {
       name: 'Ilyas',
       table: 'C01',
       orders: [
-        { id: 1, name: 'Banana Donut', count: 2 },
-        { id: 2, name: 'Banana Split', count: 3 },
-        { id: 3, name: 'Banana Mix', count: 4 },
-        { id: 4, name: 'Banana Xtra', count: 2 }
+        { id: 1, name: 'Banana Donut', count: 2, isDone: true },
+        { id: 2, name: 'Banana Split', count: 3, isDone: false },
+        { id: 3, name: 'Banana Mix', count: 4, isDone: true },
+        { id: 4, name: 'Banana Xtra', count: 2, isDone: true }
       ]
     },
     {

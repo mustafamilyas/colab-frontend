@@ -10,6 +10,7 @@ import Order from './pages/Order';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import KitchenContextProvider from './contexts/KitchenContext';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
 
         <Switch>
           <Route path="/kitchen">
-            <Kitchen />
+            <KitchenContextProvider>
+              <Kitchen />
+            </KitchenContextProvider>
           </Route>
           <Route path="/order">
             <Order />
