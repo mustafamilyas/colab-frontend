@@ -3,11 +3,11 @@ import { KitchenContext } from '../contexts/KitchenContext';
 
 const KitchenQueue = (props) => {
     const {addTodo, deleteQueue} = useContext(KitchenContext);
-    const {id, name, table} = props.queue;
+    const {order_id, name, table} = props.queue;
 
     return (
     <div className='kitchen-queue'>
-        <div className="kitchen-queue__number">#{id}</div>
+        <div className="kitchen-queue__number">#{order_id}</div>
         <div className="kitchen-queue__content">
             <div>
                 {name}
@@ -18,10 +18,10 @@ const KitchenQueue = (props) => {
         </div>
 
         <div className="kitchen-queue__action">
-            <div className="kitchen-queue__action-btn kitchen-queue__action-btn--danger" onClick={()=>deleteQueue(id)}>
-                Del
+            <div className="kitchen-queue__action-btn kitchen-queue__action-btn--danger" onClick={()=>deleteQueue(order_id)}>
+                <i class="fas fa-trash-alt"></i>
             </div>
-            <div className="kitchen-queue__action-btn kitchen-queue__action-btn--primary" onClick={()=>addTodo(id)}>
+            <div className="kitchen-queue__action-btn kitchen-queue__action-btn--primary" onClick={()=>addTodo(order_id)}>
                 Process
             </div>
         </div>

@@ -2,18 +2,20 @@ import React, {useContext} from 'react';
 import { KitchenContext } from '../contexts/KitchenContext';
 
 const KitchenTodo = (props) => {
-    const {deleteTodo} = useContext(KitchenContext)
-    const {id, name, table, orders} = props.todo;
+    const {deleteTodo, toggleOrderItem} = useContext(KitchenContext)
+    const {order_id, name, table, orders} = props.todo;
     return (
         <div className='kitchen-todo'>
-            <div className="kitchen-todo__number">#{id}</div>
+            <div className="kitchen-todo__number">#{order_id}</div>
             <div className="kitchen-todo__header">
                 <div>{name}</div>
                 <div>{table}</div>
             </div>
             <div className="kitchen-todo__items">
                 {orders.map(e=>(
-                    <div className={`kitchen-todo__item ${e.isDone ? "kitchen-todo__item--done": ""}`}>
+                    <div
+                        onClick={()=>toggleOrderItem(order_id, e.id)} 
+                        className={`kitchen-todo__item ${e.isDone ? "kitchen-todo__item--done": ""}`}>
                         <div className="kitchen-todo__item-name">
                             {e.name}
                         </div>
@@ -29,8 +31,8 @@ const KitchenTodo = (props) => {
                 ))}
             </div>
             <div className="kitchen-todo__action">
-                <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete" onClick={()=>deleteTodo(id)}>
-                    Delete
+                <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete" onClick={()=>deleteTodo(order_id)}>
+                    <i class="fas fa-trash-alt"></i>
                 </button>
                 <button className="kitchen-todo__action-btn kitchen-todo__action-btn--primary">
                     Finish

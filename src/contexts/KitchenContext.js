@@ -1,11 +1,12 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
+import { getQueue } from '../api/order';
 
 export const KitchenContext = createContext();
 
 const KitchenContextProvider = (props) => {
   const [todo, setTodo] = useState([
     {
-      id: 3122,
+      order_id: 3122,
       name: 'Ilyas',
       table: 'C01',
       orders: [
@@ -16,7 +17,7 @@ const KitchenContextProvider = (props) => {
       ]
     },
     {
-      id: 3123,
+      order_id: 3123,
       name: 'Ilyas',
       table: 'C01',
       orders: [
@@ -27,7 +28,7 @@ const KitchenContextProvider = (props) => {
       ]
     },
     {
-      id: 3124,
+      order_id: 3124,
       name: 'Ilyas',
       table: 'C01',
       orders: [
@@ -73,7 +74,6 @@ const KitchenContextProvider = (props) => {
       ]
     },
   ]);
-
   const deleteTodo = (id) => {
     setTodo([...todo.filter(e=>e.id !== id)])  
   }
@@ -89,12 +89,30 @@ const KitchenContextProvider = (props) => {
       deleteQueue(id)
     }
   }
+  const toggleOrderItem = (orderId, itemId) => {
+    setTodo(todo.map(e=>{
+      if(e.order_id === orderId) {
+        const changeIdx = e.orders.findIndex(e=>e.id === itemId);
+        e.orders[changeIdx].isDone = !e.orders[changeIdx].isDone
+      }
+      return e
+    }))
+  }
+  useEffect(() => {
+    async function loadQueue() {
+      const response = await getQueue();
+      console.log(response);
+      setQueue(response.queue)
+    }  
+    loadQueue();
+  }, [])
   const passedObj = {
     todo,
     queue,
     setQueue,
     setTodo,
     addTodo,
+    toggleOrderItem,
     deleteQueue,
     deleteTodo
   }
