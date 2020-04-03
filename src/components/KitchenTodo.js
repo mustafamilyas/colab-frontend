@@ -14,6 +14,7 @@ const KitchenTodo = (props) => {
             <div className="kitchen-todo__items">
                 {orders.map(e=>(
                     <div
+                        key={e.id}
                         onClick={()=>toggleOrderItem(order_id, e.id)} 
                         className={`kitchen-todo__item ${e.isDone ? "kitchen-todo__item--done": ""}`}>
                         <div className="kitchen-todo__item-name">
@@ -32,7 +33,7 @@ const KitchenTodo = (props) => {
             </div>
             <div className="kitchen-todo__action">
                 <button className="kitchen-todo__action-btn kitchen-todo__action-btn--delete" onClick={()=>deleteTodo(order_id)}>
-                    <i class="fas fa-trash-alt"></i>
+                    <i className="fas fa-trash-alt"></i>
                 </button>
                 <button className="kitchen-todo__action-btn kitchen-todo__action-btn--primary">
                     Finish

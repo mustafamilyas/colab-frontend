@@ -21,7 +21,6 @@ class ProductList extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick = (item) => {
-        console.log('test')
         this.props.addOrder(item)
     }
 

@@ -11,7 +11,7 @@ class OrderConfirm extends Component {
             table: this.props.table,
             orders: this.props.orders
         }
-        submitOrder(payload);
+        const response = submitOrder(payload);
         this.props.toggleModal({modalState: 2, isModalShow: true});
         this.props.emptyOrder();
     }

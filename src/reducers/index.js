@@ -1,8 +1,9 @@
-import {TOGGLE_MODAL, ADD_ORDER, CHANGE_NAME, CHANGE_TBL_NUM, EMPTY_ORDER} from '../actions';
+import {TOGGLE_MODAL, ADD_ORDER, CHANGE_NAME, CHANGE_TBL_NUM, EMPTY_ORDER, CHANGE_SUCCESS_ORDER} from '../actions';
 
 const initialState = {
     name: '',
     table: '',
+    successOrder: '',
     orders: [],
     modalState: 0,
     isModalShow: true
@@ -42,6 +43,10 @@ function rootReducer(state = initialState, action) {
         case CHANGE_TBL_NUM:
             return Object.assign({}, state, {
                 table: action.payload
+            });
+        case CHANGE_SUCCESS_ORDER:
+            return Object.assign({}, state, {
+                successOrder: action.payload
             });
         default:
             return state;

@@ -40,49 +40,50 @@ const KitchenContextProvider = (props) => {
     },
   ]);
   const [queue, setQueue] = useState([
-    {
-      id: 3142,
-      name: 'Ilyas',
-      table: 'C01',
-      orders: [
-        { id: 1, name: 'Banana Donut', count: 2 },
-        { id: 2, name: 'Banana Split', count: 3 },
-        { id: 3, name: 'Banana Mix', count: 4 },
-        { id: 4, name: 'Banana Xtra', count: 2 }
-      ]
-    },
-    {
-      id: 3152,
-      name: 'Ilyas',
-      table: 'C01',
-      orders: [
-        { id: 1, name: 'Banana Donut', count: 2 },
-        { id: 2, name: 'Banana Split', count: 3 },
-        { id: 3, name: 'Banana Mix', count: 4 },
-        { id: 4, name: 'Banana Xtra', count: 2 }
-      ]
-    },
-    {
-      id: 3172,
-      name: 'Ilyas',
-      table: 'C01',
-      orders: [
-        { id: 1, name: 'Banana Donut', count: 2 },
-        { id: 2, name: 'Banana Split', count: 3 },
-        { id: 3, name: 'Banana Mix', count: 4 },
-        { id: 4, name: 'Banana Xtra', count: 2 }
-      ]
-    },
+    // {
+    //   id: 3142,
+    //   name: 'Ilyas',
+    //   table: 'C01',
+    //   orders: [
+    //     { id: 1, name: 'Banana Donut', count: 2 },
+    //     { id: 2, name: 'Banana Split', count: 3 },
+    //     { id: 3, name: 'Banana Mix', count: 4 },
+    //     { id: 4, name: 'Banana Xtra', count: 2 }
+    //   ]
+    // },
+    // {
+    //   id: 3152,
+    //   name: 'Ilyas',
+    //   table: 'C01',
+    //   orders: [
+    //     { id: 1, name: 'Banana Donut', count: 2 },
+    //     { id: 2, name: 'Banana Split', count: 3 },
+    //     { id: 3, name: 'Banana Mix', count: 4 },
+    //     { id: 4, name: 'Banana Xtra', count: 2 }
+    //   ]
+    // },
+    // {
+    //   id: 3172,
+    //   name: 'Ilyas',
+    //   table: 'C01',
+    //   orders: [
+    //     { id: 1, name: 'Banana Donut', count: 2 },
+    //     { id: 2, name: 'Banana Split', count: 3 },
+    //     { id: 3, name: 'Banana Mix', count: 4 },
+    //     { id: 4, name: 'Banana Xtra', count: 2 }
+    //   ]
+    // },
   ]);
   const deleteTodo = (id) => {
-    setTodo([...todo.filter(e=>e.id !== id)])  
+    console.log('delete todo ', id, todo)
+    setTodo([...todo.filter(e=>e.order_id !== id)])  
   }
   const deleteQueue = (id) => {
-    setQueue([...queue.filter(e=>e.id !== id)])  
+    setQueue([...queue.filter(e=>e.order_id !== id)])  
   }
   const addTodo = (id) => {
     console.log(id, queue);
-    let newTodo = queue.find(e=>e.id === id);
+    let newTodo = queue.find(e=>e.order_id === id);
     if(newTodo){
       newTodo.orders.map(e=>({...e,isDone: false}))
       setTodo([...todo, newTodo])
@@ -102,7 +103,7 @@ const KitchenContextProvider = (props) => {
     async function loadQueue() {
       const response = await getQueue();
       console.log(response);
-      setQueue(response.queue)
+      setQueue(response)
     }  
     loadQueue();
   }, [])

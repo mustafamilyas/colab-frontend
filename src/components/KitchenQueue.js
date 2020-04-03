@@ -19,7 +19,7 @@ const KitchenQueue = (props) => {
 
         <div className="kitchen-queue__action">
             <div className="kitchen-queue__action-btn kitchen-queue__action-btn--danger" onClick={()=>deleteQueue(order_id)}>
-                <i class="fas fa-trash-alt"></i>
+                <i className="fas fa-trash-alt"></i>
             </div>
             <div className="kitchen-queue__action-btn kitchen-queue__action-btn--primary" onClick={()=>addTodo(order_id)}>
                 Process

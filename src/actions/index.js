@@ -3,3 +3,4 @@ export const EMPTY_ORDER = 'EMPTY_ORDER';
 export const CHANGE_NAME = 'CHANGE_NAME';
 export const CHANGE_TBL_NUM = 'CHANGE_TBL_NUM';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const CHANGE_SUCCESS_ORDER = 'CHANGE_SUCCESS_ORDER';

@@ -14,7 +14,6 @@ class OrderSummary extends Component {
         return subtotal;
     }
     handleOrder = () => {
-        // this.props.addArticle({title: 'ganteng'})
         this.props.toggleModal({modalState: 1, isModalShow: true})
     }
 
