@@ -9,11 +9,6 @@ import OrderSuccess from '../components/Modal/OrderSuccess';
 import {getMenu} from '../api/order';
 
 class Order extends Component {
-    componentWillMount() {
-        let menu = getMenu();
-        console.log('test', menu);
-    }
-
     render() {
         let { modalState } = this.props; 
         const modal = [

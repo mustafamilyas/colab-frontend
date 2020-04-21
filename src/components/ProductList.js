@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import ProductItem from './ProductItem';
 import { addOrder } from "../actions/order";
+import { getMenu } from "../api/order";
 
 class ProductList extends Component {
     constructor(props) {
@@ -20,6 +21,20 @@ class ProductList extends Component {
 
         this.handleClick = this.handleClick.bind(this);
     }
+
+    async componentDidMount() {
+        const response = await getMenu();
+        this.setState({
+            items: response.map(e =>{
+                return {
+                    ...e,
+                    count: 1,
+                    img: require('../assets/img/donut_springkle.png')
+                }
+            })
+        })  
+    }
+
     handleClick = (item) => {
         this.props.addOrder(item)
     }

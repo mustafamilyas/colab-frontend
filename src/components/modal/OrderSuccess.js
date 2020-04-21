@@ -20,7 +20,7 @@ class OrderSuccess extends Component {
                     </div>
                     <div className='order-success__annotation'>
                         <div className='bold'>Order Number</div>
-                        <div className='order-success__number'>213</div>
+                        <div className='order-success__number'>{this.props.successOrder.order_id}</div>
                     </div>
                     <button className='order-success__btn' onClick={this.handleSubmit}>
                         Order Again

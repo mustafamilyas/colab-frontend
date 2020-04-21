@@ -10,6 +10,7 @@ class OrderSummary extends Component {
         let subtotal = 0;
         this.props.orders.map(order => {
             subtotal += order.price * order.count
+            return order;
         })
         return subtotal;
     }
@@ -17,7 +18,17 @@ class OrderSummary extends Component {
         this.props.toggleModal({modalState: 1, isModalShow: true})
     }
 
-    render() { 
+    render() {
+        const orderItem = this.props.orders.length > 0 ? this.props.orders.map(item => (
+            <OrderItem 
+                key={item.id}
+                id={item.id}
+                img={item.img}
+                name={item.name}
+                count={item.count}
+                price={item.price}
+            />
+        )) : 'You have no order';
         return (
             <div className='order-summary'>
                 <div className='order-summary__heading'>
@@ -25,16 +36,7 @@ class OrderSummary extends Component {
                     <p>{new Date().toDateString()}</p>
                 </div>
                 <div className='order-summary__items'>
-                    {this.props.orders.length > 0 ? this.props.orders.map(item => (
-                        <OrderItem 
-                            key={item.id}
-                            id={item.id}
-                            img={item.img}
-                            name={item.name}
-                            count={item.count}
-                            price={item.price}
-                        />
-                    )) : 'You have no order'}
+                    {orderItem}
                 </div>
                 <div className='order-summary__content'>
                     <div className='row-space-between'>

@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Modal from '.';
 import SummaryItem from '../SummaryItem';
-import { toggleModal, submitOrder, emptyOrder } from "../../actions/order";
+import { toggleModal, submitOrder, emptyOrder, changeSuccessOrder } from "../../actions/order";
 
 class OrderConfirm extends Component {
-    handleSubmit = () =>{
+    handleSubmit = async () =>{
         let payload = {
             name: this.props.name,
             table: this.props.table,
             orders: this.props.orders
         }
-        const response = submitOrder(payload);
+        const response = await submitOrder(payload);
+        this.props.changeSuccessOrder(response);
         this.props.toggleModal({modalState: 2, isModalShow: true});
         this.props.emptyOrder();
     }
@@ -40,7 +41,7 @@ class OrderConfirm extends Component {
                     <div className='order-confirm__summary'>
                         {this.props.orders.length > 0 ? this.props.orders.map(item => (
                             <SummaryItem 
-                                key={item.id}
+                                key={item.order}
                                 id={item.id}
                                 img={item.img}
                                 name={item.name}
@@ -70,6 +71,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
       toggleModal: modalState => dispatch(toggleModal(modalState)),
+      changeSuccessOrder: order => dispatch(changeSuccessOrder(order)),
       emptyOrder: modalState => dispatch(emptyOrder(modalState))
     };
 }

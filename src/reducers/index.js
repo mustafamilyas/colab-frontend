@@ -10,6 +10,7 @@ const initialState = {
 };
   
 function rootReducer(state = initialState, action) {
+    console.log(action);
     switch(action.type){
         case ADD_ORDER:
             let idx = state.orders.findIndex(item => item.id === action.payload.id);

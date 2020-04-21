@@ -1,5 +1,5 @@
 import {TOGGLE_MODAL, ADD_ORDER, CHANGE_NAME, CHANGE_TBL_NUM, EMPTY_ORDER, CHANGE_SUCCESS_ORDER} from '../actions';
-import service from '../utils/request';
+// import service from '../utils/request';
 import { createOrder } from '../api/order';
 
 export const toggleModal = (payload) => {
