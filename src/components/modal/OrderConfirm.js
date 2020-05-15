@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Modal from '.';
 import SummaryItem from '../SummaryItem';
 import { toggleModal, submitOrder, emptyOrder, changeSuccessOrder } from "../../actions/order";
+import { createMenu, createOrder } from "../../api/order";
 
 class OrderConfirm extends Component {
     handleSubmit = async () =>{
@@ -11,6 +12,14 @@ class OrderConfirm extends Component {
             table: this.props.table,
             orders: this.props.orders
         }
+        // let menu = {
+        //     type: 'Makanan',
+        //     status: 'Available',
+        //     price: 18000,
+        //     name: 'Pizza'
+        // }
+        // const response2 = await createMenu(menu);
+        // console.log(response2)
         const response = await submitOrder(payload);
         this.props.changeSuccessOrder(response);
         this.props.toggleModal({modalState: 2, isModalShow: true});

@@ -19,7 +19,13 @@ export const getQueue = async function () {
 }
 
 export const createOrder = async function (payload) {
-    const response = await request.post("/queue", payload)
+    const response = await request.post("/order", payload)
+    
+    return response.data
+}
+
+export const createMenu = async function (payload) {
+    const response = await request.post("/menu", payload)
     
     return response.data
 }

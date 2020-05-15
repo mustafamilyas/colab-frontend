@@ -5,6 +5,7 @@
     border-radius: 5%;
     border: 1px solid rgba(black, .1);
     position: relative;
+    flex-shrink: 0;
 
     &:not(:last-child) {
         margin-right: $gutter-md;

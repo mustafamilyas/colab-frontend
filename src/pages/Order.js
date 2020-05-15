@@ -6,7 +6,6 @@ import ProductList from '../components/ProductList';
 import OrderIntro from '../components/Modal/OrderIntro';
 import OrderConfirm from '../components/Modal/OrderConfirm';
 import OrderSuccess from '../components/Modal/OrderSuccess';
-import {getMenu} from '../api/order';
 
 class Order extends Component {
     render() {
